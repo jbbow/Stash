@@ -23,6 +23,9 @@ html, body{
  }
 
  /* GRID */
+
+ body > main > section > div:nth-child(2) {margin-top: 30px;}
+
  .container {
    margin-right: auto;
    margin-left: auto;
@@ -97,14 +100,14 @@ body > footer > div > nav { width:35%;}
  .hamburger {
    position:absolute;
    z-index: 1000;
-   background:#34495E;
+   background:#263248;
    color:#FFF;
    text-decoration: none;
    font-size: 22px;
    padding: 10px 15px;
    border-radius: 4px;
    left: 5px;
-   top: 15px;
+   top: 22px;
  }
 
 
@@ -508,6 +511,7 @@ footer .logo {
 
 }
 
+
 .nav-box:hover { margin:auto;
    background: #7e8aa2;
    border-right: 1px solid #7e8aa2;
@@ -531,16 +535,17 @@ body > div.nav > main > section {margin-top: 65px;}
     font-size:12px;
 }
 
-
 #site-logo {
     position: fixed;
     background-color: #fff;
     width: 100%;
-    padding: 21px;
+    padding: 13px 0px 9px 0px;
     box-shadow: 3px 3px 15px #888888;
-    z-index:1;
-
+    z-index: 1;
+    text-align: center;
 }
+
+
 
  .iconNav {
     text-align: center;
@@ -554,11 +559,13 @@ body > div.nav > main > section {margin-top: 65px;}
    color: #E2E2E2;
    line-height: 15px;
  }
-.nav ul {
-    margin: 20px 0 0;
-    padding: 0;
-    background-color: #7e8aa2;
+
+ .nav ul {
+    margin: 20px -1px 0;
+    padding-left: 24px;
+    background-color: #263248;
 }
+
 
 
 .nav ul li {
@@ -701,13 +708,24 @@ body > div.items > main > section {
 
 
 
+ 
+
+
+
+
+
 /* media queries */
+ @media (min-width:320px) {}
+
+
+
+
 
    @media (min-width:460px) {
    .content {
      padding:1.5em 1%;
      float: left;
-     width:90%;
+     width:100%;
      position: relative;
    }
    .content-item {
@@ -716,7 +734,28 @@ body > div.items > main > section {
      float:left;
      display:block;
    }
- }
+
+   
+ .content {
+    padding: 1.5em 1%;
+    float:center;
+   width:100%;
+    position: relative;
+}
+
+#settings {
+    background: #f8981d;
+    width: 92%;
+    height: 83px;
+    right: 0;
+    top: 479px;
+    padding: 20px 17px;
+    position: fixed;
+    -webkit-box-shadow: inset 0px -11px 25px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px -11px 25px -9px rgba(0,0,0,0.75);
+    box-shadow: inset 0px -11px 25px -9px rgba(0,0,0,0.75);
+    z-index: 1;
+}}
 
  @media (min-width: 768px) {
    .container {
@@ -729,17 +768,73 @@ body > div.items > main > section {
    }
 
   .content {
-    padding: 2.5em 5%;
-    float: left;
-    width: 90%;
+    padding: 0px;
+    float: center;
+    width: 100%;
     position: relative;
+    overflow: hidden;
+    margin-top: 30px;
 }
  
-  .content-item {
-     width: 14%;
-    margin: 0px 1% 41px;
+.content-item {
+    width: 28%;
+    margin: -1px 1% 30px;
 }
-#site-logo > a > img {margin:auto;}
+#site-logo {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    padding: 21px;
+    box-shadow: 3px 3px 15px #888888;
+    z-index:1;
+
+}
+
+.content {
+    padding:0px;
+    float:center;
+    width:100%;
+    position: relative;
+    overflow: hidden;
+}
+.nav {
+   height: 100%;
+   width:280px;
+   position:absolute;
+   -webkit-transition: all 0.3s ease-in-out;
+   -moz-transition: all 0.3s ease-in-out;
+   -o-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+   transform: translate(-280px,0);
+     -webkit-transform: translate(-280px,0); /** Chrome & Safari **/
+     -o-transform: translate(-280px,0); /** Opera **/
+     -moz-transform: translate(-280px,0); /** Firefox **/
+ }
+ .nav.open {
+   display:block;
+   width:280px;
+   -webkit-transition: all 0.3s ease-in-out;
+   -moz-transition: all 0.3s ease-in-out;
+   -o-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
+   transform: translate(0,0);
+     -webkit-transform: translate(0,0); /** Chrome & Safari **/
+     -o-transform: translate(0,0); /** Opera **/
+     -moz-transform: translate(0,0); /** Firefox **/
+     z-index: 100;
+ }
+ .hamburger {
+   position:absolute;
+   z-index: 1000;
+   background:#263248;
+   color:#FFF;
+   text-decoration: none;
+   font-size: 22px;
+   padding: 10px 15px;
+   border-radius: 4px;
+   left: 5px;
+   top: 22px;
+ }
 
 
 
@@ -747,11 +842,16 @@ body > div.items > main > section {
 
 
  
- @media (min-width: 992px) {
+ @media (min-width: 1025px) {
 
    .container {
-     width: 970px;
+     width: 1000px;
    }
+
+    .content-item {
+    width: 13%;
+    margin: 0px 1% 41px;
+}
    .one-half {
      width:46%;
      display:inline;
@@ -763,6 +863,57 @@ body > div.items > main > section {
    .one-fourth {
      width:21%;
    }
+
+   #site-logo {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    padding: 21px;
+    box-shadow: 3px 3px 15px #888888;
+    text-align: left;
+    z-index:1;
+
+}
+
+.profile {
+    margin: auto;
+    color: #fff;
+    font-size: 20px;
+}
+
+ #settings > div > p > a > i { margin: 10px 30px 3px 10px;}
+
+#settings {
+    background: #f8981d;
+    width: 10%;
+    height: 83px;
+    margin-right: 157px;
+    top: 24px;
+    padding: 20px 17px;
+    /* position: fixed; */
+    -webkit-box-shadow: inset 0px -11px 25px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px -11px 25px -9px rgba(0,0,0,0.75);
+    box-shadow: inset 0px -11px 25px -9px rgba(0,0,0,0.75);
+    z-index: 1;
+}
+
+.settings img {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: block;
+}
+
+.settings a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 9px;
+}
+
+.Stash {
+   margin-left: 50px;
+   display:inline;}
 .features > ul > li > div.one-fourth > img {width:109%;}
 
 .screenshots > ul > li:nth-child(2) > ul > li > img {
@@ -772,6 +923,7 @@ body > div.items > main > section {
 .nav ul {
     margin: 20px 0 0;
     padding: 0;
+    background-color: transparent;
 }
 
     .nav {
@@ -796,14 +948,31 @@ body > div.items > main > section {
    .hamburger {
      display:none;
    }
- }
 
- 
 
   @media (min-width: 1200px) {
    .container {
      width: 1170px;
    }
 
+}
 
 
+ @media (min-width: 1280px) {
+.content-item {
+    width: 21%;
+    margin: 0px 1% 41px;
+}}
+
+@media (min-width: 1440px) {
+.content-item {
+    width: 21%;
+    margin: 0px 1% 41px;
+}}
+
+@media (min-width: 1640px) {
+.content-item {
+    width: 12%;
+    margin: 0px 1% 41px;
+}}
+    
